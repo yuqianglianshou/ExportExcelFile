@@ -23,8 +23,11 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "创建成功", Toast.LENGTH_SHORT).show()
             Log.i("lq ", " ok")
             textView.text = "文件目录为  " + file.absolutePath
+            //打开文件
+            FileUtils(this).openFile(file.absolutePath)
         }
     }
+
     /**
      * 创建一个本地存储路径
      * /storage/emulated/0/Android/data/com.moon.exportexcelfile/files/Documents/export.xls
@@ -36,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         Log.i("lq ", " file == " + file.absolutePath)
         return file
     }
+
     /**
      * 生成 20行8列 数据，第一行为表头
      */
